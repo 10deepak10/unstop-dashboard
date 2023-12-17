@@ -1,1 +1,10 @@
-layout
+<main class="main-container">
+  <app-header (ctrlMenu)="openSidebar()" [title]="title"></app-header>
+  <app-sidebar [navGroups]="navGroup" [showSidebar]="showSidebar">
+    <div class="layout-content">
+      <div class="content-container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </app-sidebar>
+</main>

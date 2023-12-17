@@ -1,0 +1,37 @@
+<div class="sidebar-container">
+  <div class="sidebar-wrapper" [ngClass]="showSidebar() ? '' : 'hidden'">
+    <div class="sidebar-nav">
+      <div class="nav-header">
+        <span>Menu</span>
+        <span class="icon-container" (click)="toggleSidebar()">
+          <app-icon size="14px" icon="assets/icons/cross.svg"></app-icon>
+        </span>
+      </div>
+      <nav
+        *ngFor="let navGroup of navGroups"
+        class="nav"
+        [ngClass]="navGroup.notification ? 'notify' : ''"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="navGroup.link"
+        (click)="toggleSidebar()"
+      >
+        <span class="icon-container">
+          <app-icon [icon]="navGroup.icon"></app-icon>
+        </span>
+
+        <div class="nav-title-box">
+          <div class="nav-title">
+            <span>{{ navGroup.title }}</span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="remove" [ngClass]="showSidebar() ? 'fixed-shadow' : ''" (click)="toggleSidebar()"></div>
+  <div class="content-wrapper">
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

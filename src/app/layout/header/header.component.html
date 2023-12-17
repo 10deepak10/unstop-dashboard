@@ -1,0 +1,17 @@
+<header
+  class="header-container"
+>
+  <div class="header">
+    <div class="menu flex">
+        <span class="icon-container" (click)="menuCtrl()">
+          <app-icon icon="assets/icons/bars.svg" size="22.5px"></app-icon>
+        </span>
+      <div class="title">{{ title }}</div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <ng-content select="[center]"></ng-content>
+  <div class="right">
+    <ng-content select="[right]"></ng-content>
+  </div>
+</header>

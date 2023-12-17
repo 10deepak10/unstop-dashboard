@@ -1,0 +1,43 @@
+@import "../../shared/styles/theme.scss";
+.header-container {
+  display: none;
+}
+@media (max-width: 600px) {
+  .header-container {
+    display: flex;
+    box-sizing: border-box;
+    height: 50px;
+    align-items: center;
+    padding: 0px 15px;
+    justify-content: space-between;
+    background-color: $theme-white;
+  }
+  .flex {
+    display: flex;
+  }
+  .menu {
+    align-items: center;
+  }
+  .title {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: $theme-primary;
+  }
+  .icon-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: $theme-secondary-5;
+    border-radius: 99px;
+    padding: 4px;
+    cursor: pointer;
+    & > * {
+      background-color: $theme-primary;
+    }
+  }
+}

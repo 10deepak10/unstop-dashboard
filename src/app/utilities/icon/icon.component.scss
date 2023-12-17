@@ -1,0 +1,14 @@
+.icon {
+  position: absolute;
+  flex-shrink: 0;
+  width: var(--size);
+  height: var(--size);
+  font-size: x-large;
+  text-align: center;
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: inherit;
+  background-position: center;
+}

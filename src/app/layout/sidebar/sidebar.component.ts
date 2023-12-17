@@ -1,20 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule, NgClass } from '@angular/common';
+import {
+  Component,
+  Input,
+  signal,
+} from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavGroup } from '../../shared/interfaces/interfaces';
+import { IconComponent } from '../../utilities/icon/icon.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrl: './sidebar.component.scss',
+  imports: [CommonModule, RouterLink, RouterLinkActive, NgClass, IconComponent],
 })
 export class SidebarComponent {
-  sidebarWidth = '8.75rem';
   @Input() navGroups: NavGroup[] = [];
-  // toggleSidebarWidth() {
-  //   this.sidebarWidth = this.sidebarWidth == '8.75rem' ? '3rem' : '8.75rem';
-  // }
-  constructor(private route: Router) {}
+  @Input() showSidebar = signal(false); // for mobile view
+  toggleSidebar() {
+    this.showSidebar.set(false);
+  }
+  constructor() {}
+  
 }
