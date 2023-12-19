@@ -1,40 +1,46 @@
 @import "../../shared/styles/theme.scss";
+
 .tabs {
   display: flex;
   cursor: pointer;
   height: 70px;
-}
-.tabs div {
-  padding: 20px 0px;
-  margin-left: 20px;
-  border-bottom: 3px solid transparent;
-  .title {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 17px;
-    letter-spacing: 0em;
-    color: $theme-primary;
+
+  div {
+    padding: 20px 0;
+    margin-left: 20px;
+    border-bottom: 3px solid transparent;
+
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 17px;
+      letter-spacing: 0em;
+      color: $theme-primary;
+    }
+
+    &.active {
+      border-color: $theme-secondary;
+
+      .title {
+        color: $theme-secondary;
+      }
+    }
   }
-}
-.tabs div.active {
-  border-color: $theme-secondary;
-  .title {
-    color: $theme-secondary;
-  }
-}
-@media (max-width: 600px) {
-  .tabs {
+
+  @media (max-width: 600px) {
     width: 100%;
     height: 50px;
+
     div {
-      padding: 0px;
+      padding: 0;
       width: 100%;
-      margin-left: 0px;
+      margin-left: 0;
       text-align: center;
       border-bottom: 2px solid transparent;
+
       .title {
         display: inline-block;
-        margin: 20px 0px;
+        margin: 20px 0;
         width: 100%;
         font-size: 14px;
         font-weight: 500;

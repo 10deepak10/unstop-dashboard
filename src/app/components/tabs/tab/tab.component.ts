@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './tab.component.html',
-  styleUrl: './tab.component.scss'
+  styleUrl: './tab.component.scss',
 })
 export class TabComponent {
   @Input() tabTitle!: string;
