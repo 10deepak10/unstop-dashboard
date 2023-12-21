@@ -1,0 +1,117 @@
+@import "../../shared/styles/theme.scss";
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  height: 100%;
+  width: 591px;
+  left: 50%;
+  background-color: $theme-white;
+  border-radius: 8px;
+  border: 1px solid $theme-border;
+  overflow: hidden;
+  transition: transform 300ms ease-in-out;
+  transform: translateX(-50%) translateY(0%);
+  .modal-header {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $theme-border;
+    padding: 23px 30px;
+    .modal-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: $theme-primary;
+    }
+
+    // .icon-container {
+    //   width: 15px;
+    //   height: 15px;
+    //   margin: 5px;
+    //   position: relative;
+    //   & > * {
+    //     background-color: $theme-black;
+    //   }
+    // }
+    .icon-container {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      background-color: $accent-red;
+      border-radius: 99px;
+      padding: 6.5px;
+      cursor: pointer;
+      & > * {
+        background-color: $theme-red;
+      }
+    }
+  }
+  .modal-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    overflow-y: hidden;
+    .content {
+      flex-grow: 1;
+      padding: 20px 30px 20px 30px;
+      overflow-y: auto;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .modal-footer {
+      position: relative;
+      flex-shrink: 0;
+      flex-wrap: 0;
+      display: flex;
+      height: 80px;
+      width: 100%;
+      padding: 20px 30px;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid $theme-border;
+      background-color: $theme-white;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-container {
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+    .modal-header {
+      height: 60px;
+      padding: 10px 15px;
+      .modal-title {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+    .modal-content .content {
+      padding: 16px 15px;
+    }
+  }
+}

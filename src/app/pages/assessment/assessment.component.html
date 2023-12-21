@@ -1,1 +1,9 @@
-assesment page
+<button (click)="openModal()">Open Modal</button>
+<app-modal
+  [title]="modalTitle"
+  [showModal]="showModal"
+  (closeModalEvent)="closeModal()"
+>
+  <div>m0dal</div>
+  <button modal-footer class="btn">Save</button>
+</app-modal>

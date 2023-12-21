@@ -1,0 +1,20 @@
+<div class="modal-overlay" (click)="closeModal()" *ngIf="showModal"></div>
+<div
+  class="modal-container"
+  [@slideInFromBottom]
+  (click)="stopPropagation($event)"
+  *ngIf="showModal"
+>
+  <div class="modal-header">
+    <span class="modal-title">{{ title }}</span>
+    <span class="icon-container" (click)="closeModal()">
+      <app-icon size="17px" icon="assets/icons/cross.svg"></app-icon>
+    </span>
+  </div>
+  <div class="modal-content">
+    <div class="content"><ng-content></ng-content></div>
+    <div class="modal-footer">
+      <ng-content select="[modal-footer]"></ng-content> <!--  No default action button for more fexibility -->
+    </div>
+  </div>
+</div>
