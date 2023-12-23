@@ -2,10 +2,16 @@
   <div class="sidebar-wrapper" [ngClass]="showSidebar() ? '' : 'hidden'">
     <div class="sidebar-nav">
       <div class="nav-header">
-        <span>Menu</span>
-        <span class="icon-container" (click)="toggleSidebar()">
-          <app-icon size="14px" icon="assets/icons/cross.svg"></app-icon>
-        </span>
+        <div class="header">
+          <span>Menu</span>
+          <app-icon
+            size="14px"
+            [color]="iconColor"
+            bgSize="24px"
+            icon="assets/icons/cross.svg"
+            (click)="toggleSidebar()"
+          ></app-icon>
+        </div>
       </div>
       <nav
         *ngFor="let navGroup of navGroups"
@@ -16,9 +22,14 @@
         [routerLink]="navGroup.link"
         (click)="toggleSidebar()"
       >
-        <span class="icon-container">
-          <app-icon [icon]="navGroup.icon"></app-icon>
-        </span>
+        <app-icon
+          size="15px"
+          bgSize="20px"
+          [icon]="navGroup.icon"
+          [color]="
+            isactive() == '/' + navGroup.link ? iconColorActive : iconColor
+          "
+        ></app-icon>
 
         <div class="nav-title-box">
           <div class="nav-title">
@@ -28,7 +39,11 @@
       </nav>
     </div>
   </div>
-  <div class="remove" [ngClass]="showSidebar() ? 'fixed-shadow' : ''" (click)="toggleSidebar()"></div>
+  <div
+    class="remove"
+    [ngClass]="showSidebar() ? 'fixed-shadow' : ''"
+    (click)="toggleSidebar()"
+  ></div>
   <div class="content-wrapper">
     <div class="content">
       <ng-content></ng-content>

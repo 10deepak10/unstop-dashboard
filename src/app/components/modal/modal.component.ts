@@ -2,6 +2,7 @@ import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '../../utilities/icon/icon.component';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { theme } from '../../shared/theme';
 @Component({
   selector: 'app-modal',
   standalone: true,
@@ -27,15 +28,17 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ],
 })
 export class ModalComponent {
+  public iconBg = theme['accent-red'];
+  public iconColor = theme['theme-red'];
   @Input() title: string = 'Modal Title';
   @Input() showModal: boolean = false;
   @Output() closeModalEvent = new EventEmitter<void>();
 
-  closeModal(): void {
+  public closeModal(): void {
     this.closeModalEvent.emit();
   }
 
-  stopPropagation(event: Event): void {
+  public stopPropagation(event: Event): void {
     event.stopPropagation();
   }
 }

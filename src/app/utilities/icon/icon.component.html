@@ -1,9 +1,19 @@
-    <span
-      class="icon"
-      [style]="{
+<div
+  class="icon-container"
+  [style]="{
+      '--bgSize': bgSize,
+      '--bg': bg,
+      '--rounded': rounded=='semi'?'8px':rounded=='full'?'100px':'0px',
+    }"
+>
+  <span
+    class="icon"
+    [style]="{
         '-webkit-mask-image': 'url(' + icon + ')',
         'mask-image': 'url(' + icon + ')',
         '--size': size,
+        '--color': color,
       }"
-    >
-    </span>
+  >
+  </span>
+</div>

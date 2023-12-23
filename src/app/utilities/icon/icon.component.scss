@@ -1,14 +1,32 @@
-.icon {
-  position: absolute;
+:host {
+  width: fit-content;
+  height: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--bgSize);
+  height: var(--bgSize);
+  background-color: var(--bg);
+  border-radius: var(--rounded);
   flex-shrink: 0;
-  width: var(--size);
-  height: var(--size);
-  font-size: x-large;
-  text-align: center;
-  -webkit-mask-size: 100%;
-  mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-color: inherit;
-  background-position: center;
+  .icon {
+    position: absolute;
+    flex-shrink: 0;
+    width: var(--size);
+    height: var(--size);
+    font-size: x-large;
+    text-align: center;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: var(--color);
+    background-position: center;
+  }
 }

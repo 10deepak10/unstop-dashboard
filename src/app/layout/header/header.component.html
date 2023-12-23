@@ -1,11 +1,15 @@
-<header
-  class="header-container"
->
+<header class="header-container">
   <div class="header">
-    <div class="menu flex">
-        <span class="icon-container" (click)="menuCtrl()">
-          <app-icon icon="assets/icons/bars.svg" size="22.5px"></app-icon>
-        </span>
+    <div class="head-item">
+      <app-icon
+        [color]="iconColor"
+        [bg]="iconBG"
+        rounded="full"
+        bgSize="40px"
+        icon="assets/icons/bars.svg"
+        size="30px"
+        (click)="menuCtrl()"
+      ></app-icon>
       <div class="title">{{ title }}</div>
       <ng-content></ng-content>
     </div>

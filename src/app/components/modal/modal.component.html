@@ -7,9 +7,15 @@
 >
   <div class="modal-header">
     <span class="modal-title">{{ title }}</span>
-    <span class="icon-container" (click)="closeModal()">
-      <app-icon size="17px" icon="assets/icons/cross.svg"></app-icon>
-    </span>
+    <app-icon
+      size="17.5px"
+      [bg]="iconBg"
+      bgSize="40px"
+      [color]="iconColor"
+      rounded="full"
+      icon="assets/icons/cross.svg"
+      (click)="closeModal()"
+    ></app-icon>
   </div>
   <div class="modal-content">
     <div class="content"><ng-content></ng-content></div>

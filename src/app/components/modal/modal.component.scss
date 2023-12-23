@@ -18,6 +18,7 @@
   bottom: 0;
   height: 100%;
   width: 591px;
+  max-width: 100%;
   left: 50%;
   background-color: $theme-white;
   border-radius: 8px;
@@ -41,28 +42,8 @@
       text-align: center;
       color: $theme-primary;
     }
-
-    // .icon-container {
-    //   width: 15px;
-    //   height: 15px;
-    //   margin: 5px;
-    //   position: relative;
-    //   & > * {
-    //     background-color: $theme-black;
-    //   }
-    // }
-    .icon-container {
-      position: relative;
-      width: 30px;
-      height: 30px;
-      margin: 5px;
-      background-color: $accent-red;
-      border-radius: 99px;
-      padding: 6.5px;
+    app-icon {
       cursor: pointer;
-      & > * {
-        background-color: $theme-red;
-      }
     }
   }
   .modal-content {

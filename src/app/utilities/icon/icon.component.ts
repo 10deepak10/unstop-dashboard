@@ -9,5 +9,19 @@ import { Component, Input } from '@angular/core';
 })
 export class IconComponent {
   @Input() icon: string | undefined;
-  @Input() size: string ='15px';
+  @Input() size: string = '15px';
+  @Input() bgSize: string = this.setBgSize;
+  @Input() color: string = 'black';
+  @Input() bg: string = 'transparent';
+  @Input() rounded: 'none' | 'full' | 'semi' = 'none';
+
+  private get setBgSize(): string {
+    const matchResult = this.size.match(/[\d\.]+/);
+    if (matchResult && matchResult[0]) {
+      return parseFloat(matchResult[0]) * 2 + 'px';
+    } else {
+      // Handle the case where there is no match or the match is null
+      return '30px'; // Or any default value you want
+    }
+  }
 }
