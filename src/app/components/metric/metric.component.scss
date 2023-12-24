@@ -1,0 +1,74 @@
+@import "../../shared/styles/theme.scss";
+:host {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px 16px 20px;
+}
+.metric-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: $theme-primary;
+  text-transform: capitalize;
+}
+.main-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  .metric-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:not(:first-of-type) {
+      border-left: 1px solid $theme-border;
+    }
+    &:first-of-type {
+      padding-left: 0px;
+    }
+    &:last-of-type {
+      padding-right: 0px;
+    }
+
+    .metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      .numeric {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4px;
+        .count {
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 28px;
+          letter-spacing: 0px;
+          color: $theme-primary;
+        }
+        .count-support {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 17px;
+          letter-spacing: 0px;
+          color: $theme-success;
+        }
+      }
+      .information {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0px;
+        color: $theme-primary;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

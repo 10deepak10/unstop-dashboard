@@ -21,7 +21,7 @@ export class IconComponent {
       return parseFloat(matchResult[0]) * 2 + 'px';
     } else {
       // Handle the case where there is no match or the match is null
-      return '30px'; // Or any default value you want
+      return '30px';
     }
   }
 }

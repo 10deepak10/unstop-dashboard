@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '../../utilities/icon/icon.component';
-import { theme } from '../../shared/theme';
+import { theme } from '../../shared/styles/theme';
 
 @Component({
   selector: 'app-header',

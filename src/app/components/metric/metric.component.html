@@ -1,0 +1,35 @@
+<span class="metric-title">{{ title }}</span>
+<div class="main-container">
+  <div class="metric-container" *ngFor="let data of metric">
+    <app-icon
+      (click)="data.action?.()"
+      *ngIf="data.icon"
+      [icon]="data.icon.name"
+      [bg]="data.icon.bg"
+      [color]="data.icon.color"
+      bgSize="40px"
+      size="20px"
+      rounded="semi"
+      [ngStyle]="{
+        'margin-right': data.information ? '10px' : '0px',
+        cursor: data.action ? 'pointer' : 'default'
+      }"
+    ></app-icon>
+    <div class="metrics">
+      <div class="numeric">
+        <span *ngIf="data.count" class="count">{{
+          data.count | number : "1.0-0"
+        }}</span>
+        <span *ngIf="data.extra" class="count-support">+{{ data.extra }}</span>
+      </div>
+      <span
+        (click)="data.action?.()"
+        *ngIf="data.information"
+        class="information"
+        [style.cursor]="data.action != undefined ? 'pointer' : 'default'"
+      >
+        {{ data.information }}</span
+      >
+    </div>
+  </div>
+</div>

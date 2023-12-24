@@ -1,0 +1,10 @@
+<div class="pill-container" *ngIf="showPill">
+  <span class="pill-name">{{ name }}</span>
+  <app-icon
+    icon="assets/icons/cross.svg"
+    size="10.5px"
+    bgSize="18px"
+    [color]="iconColor"
+    (click)="onClose()"
+  ></app-icon>
+</div>

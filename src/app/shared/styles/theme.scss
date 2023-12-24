@@ -1,17 +1,21 @@
 //theme color taken from figma
-$theme-primary: #1C4980;
-$theme-secondary: #0073E6;
-$theme-secondary-5: #F2F8FE;
-$theme-accent: #DDEDFF;
-$theme-border: #DADCE0;
-$text-50-percent: #8DA4BF;
-$system-divider: #DDE5EA;
-$theme-white: #FFFFFF;
+$theme-primary: #1c4980;
+$theme-secondary: #0073e6;
+$theme-secondary-5: #f2f8fe;
+$theme-red: #d63500;
 $theme-black: #000000;
+$theme-white: #ffffff;
+$theme-success: #05c165;
+$theme-purple: #6548ee;
 $theme-background: #f6f8fa;
-$theme-red: #D63500;
-$accent-red: #FBEBEA;
+$theme-border: #dadce0;
+$theme-accent: #ddedff;
 
+$text-50-percent: #8da4bf;
+$system-divider: #dde5ea;
+
+$accent-red: #fbebea;
+$accent-purple: #ebe8fd;
 
 //device breakpoints for responsive design
 $mobile-width: 600px;

@@ -26,6 +26,7 @@
   overflow: hidden;
   transition: transform 300ms ease-in-out;
   transform: translateX(-50%) translateY(0%);
+  z-index: 999;
   .modal-header {
     display: flex;
     height: 70px;
@@ -79,7 +80,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media ($mobile-width) {
   .modal-container {
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;

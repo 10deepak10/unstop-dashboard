@@ -5,14 +5,16 @@ export enum theme {
   'theme-secondary-5' = '#F2F8FE',
   'theme-accent' = '#DDEDFF',
   'theme-border' = '#DADCE0',
+  'theme-success' = '#05C165',
   'text-50-percent' = '#8DA4BF',
   'system-divider' = '#DDE5EA',
   'theme-white' = '#FFFFFF',
   'theme-black' = '#000000',
   'theme-background' = '#f6f8fa',
   'theme-red' = '#D63500',
+  'theme-purple' = '#6548EE',
   'accent-red' = '#FBEBEA',
-
+  'accent-purple' = '#EBE8FD',
   //device breakpoints for responsive design
   'mobile-width' = '600px',
   'tablet-width' = '768px',

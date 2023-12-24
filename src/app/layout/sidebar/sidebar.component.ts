@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { NavGroup } from '../../shared/interfaces/interfaces';
 import { IconComponent } from '../../utilities/icon/icon.component';
-import { theme } from '../../shared/theme';
+import { theme } from '../../shared/styles/theme';
 
 @Component({
   selector: 'app-sidebar',

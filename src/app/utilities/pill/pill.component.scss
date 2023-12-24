@@ -1,0 +1,22 @@
+@import "../../shared/styles/theme.scss";
+.pill-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: $theme-accent;
+  border-radius: 22px;
+  padding: 6px 8px 6px 10px;
+  gap: 5px;
+  .pill-name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    color: $theme-primary;
+  }
+  app-icon {
+    cursor: pointer;
+  }
+}
