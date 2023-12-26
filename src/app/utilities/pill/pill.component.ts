@@ -16,7 +16,7 @@ export class PillComponent {
   @Input() name: string = '';
   @Output() closed: EventEmitter<void> = new EventEmitter<void>();
 
-  onClose() {
+  public onClose(): void {
     this.showPill = false;
     this.closed.emit();
   }

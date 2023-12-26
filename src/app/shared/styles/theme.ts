@@ -13,6 +13,8 @@ export enum theme {
   'theme-background' = '#f6f8fa',
   'theme-red' = '#D63500',
   'theme-purple' = '#6548EE',
+  'theme-blue' = '#3079E1',
+  'theme-pink' = '#E9407A',
   'accent-red' = '#FBEBEA',
   'accent-purple' = '#EBE8FD',
   //device breakpoints for responsive design

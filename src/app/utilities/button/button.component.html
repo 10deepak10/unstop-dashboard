@@ -1,1 +1,24 @@
-<p>button works!</p>
+<button
+  class="btn-container"
+  [style]="{
+    '--bg': bg,
+    '--color': color,
+    '--colorActive': colorActive,
+    '--colorHover': colorHover,
+    '--bgHover': bgHover,
+    '--border': border? '1px' : 'none' ,
+    '--rounded': rounded=='sm'?'8px':rounded=='full'?'100px':rounded=='md'?'50px':'0px',
+  }"
+  (mousedown)="active = true"
+  (mouseup)="active = false"
+  (mouseleave)="active = false"
+>
+  <app-icon
+    *ngIf="icon"
+    [icon]="icon"
+    [color]="active ? colorActive : color"
+    size="20px"
+    bgSize="20px"
+  ></app-icon>
+  <span class="title">{{ title }}</span>
+</button>

@@ -1,0 +1,68 @@
+<div class="card-container">
+  <div class="card-top">
+    <div class="card-data">
+      <app-icon
+        [icon]="icon"
+        [bg]="iconBg"
+        [color]="iconColor"
+        bgSize="50px"
+        size="20px"
+        rounded="md"
+      ></app-icon>
+      <div class="card-info">
+        <span class="title">{{ title }}</span>
+        <div class="info">
+          <span class="type">{{ type }}</span>
+          <span class="date-info">
+            <app-icon
+              [icon]="'assets/icons/calander.svg'"
+              [color]="Iconcolor"
+              bgSize="14px"
+              size="12px"
+            ></app-icon>
+            <span class="date"> {{ date | date : "dd MMM yyyy" }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <app-icon
+      [icon]="'assets/icons/dots.svg'"
+      [color]="Iconcolor"
+      bgSize="20px"
+      size="20px"
+    ></app-icon>
+  </div>
+  <div class="card-bottom">
+    <div class="card-meta-data">
+      <div class="meta-data">
+        <span class="count">{{ duration }}</span>
+        <span class="info-name">Duration</span>
+      </div>
+      <div class="meta-data">
+        <span class="count">{{ totalQuestion }}</span>
+        <span class="info-name">Questions</span>
+      </div>
+    </div>
+    <div class="card-action">
+      <app-button
+        [icon]="'assets/icons/share.svg'"
+        [border]="true"
+        rounded="md"
+        title="Share"
+      ></app-button>
+      <div class="avatar-box">
+        <div class="avatars">
+          @for(avatar of userShared.slice(0, 3); track avatar){
+          <app-avatar
+            [initial]="avatar.initial"
+            [src]="avatar.src"
+          ></app-avatar>
+          }
+        </div>
+        @if(userShared.length > 3){<span class="extra-avatar"
+          >+{{ userShared.length - 3 }}</span
+        >}
+      </div>
+    </div>
+  </div>
+</div>
