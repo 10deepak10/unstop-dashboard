@@ -1,0 +1,138 @@
+<app-modal
+  [title]="modalTitle"
+  [showModal]="showModal"
+  (closeModalEvent)="closeModal()"
+>
+  <!-- my-form.component.html -->
+
+  <form class="modal-content" [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="input-container">
+      <label for="name">Name of assessment</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Type Here"
+      />
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('name')!.hasError('required') &&
+          (myForm.get('name')!.dirty || myForm.get('name')!.touched)
+        "
+      >
+        Name of assessment is required.
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('name')!.hasError('minlength') && myForm.get('name')!.dirty
+        "
+      >
+        Name must be at least 3 characters long.
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('name')!.hasError('maxlength') && myForm.get('name')!.dirty
+        "
+      >
+        Name cannot exceed 50 characters.
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="test_purpose">Purpose of the test is</label>
+      <select id="test_purpose" formControlName="test_purpose">
+        <option value="Hiring">Hiring</option>
+        <option value="hackathon">hackathon</option>
+        <option value="qizz">qizz</option>
+        <option value="other" selected>other</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('description')!.hasError('required') &&
+          (myForm.get('description')!.dirty ||
+            myForm.get('description')!.touched)
+        "
+      >
+        description is required.
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('description')!.hasError('minlength') &&
+          myForm.get('description')!.dirty
+        "
+      >
+        description must be at least 10 characters long.
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('description')!.hasError('maxlength') &&
+          myForm.get('description')!.dirty
+        "
+      >
+        description cannot exceed 500 characters.
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="skills">Skills</label>
+      <div class="skills-box">
+        <span class="pills-box">
+          <app-pill *ngFor="let pill of skills ; index as i" [name]="pill" (closed)="removeSkill(i)"></app-pill>
+        </span>
+        <input
+          type="text"
+          id="skills"
+          formControlName="skills"
+          placeholder="Type Here"
+          (keyup.enter)="addSkill($event)"
+        />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('skills')!.hasError('minPills') &&
+          (myForm.get('skills')!.dirty || myForm.get('skills')!.touched)
+        "
+      >
+        You must add at least 3 skills.
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="duration">Duration of assessment</label>
+      <input
+        type="time"
+        id="duration"
+        formControlName="duration"
+        step="1"
+        pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]"
+        placeholder="HH:MM:SS"
+      />
+      <div
+        class="error"
+        *ngIf="
+          myForm.get('duration')!.hasError('required') &&
+          (myForm.get('duration')!.dirty || myForm.get('duration')!.touched)
+        "
+      ></div>
+    </div>
+  </form>
+
+  <button
+    modal-footer
+    class="btn"
+    (click)="submitForm()"
+    [disabled]="myForm.invalid"
+  >
+    Save
+  </button>
+</app-modal>
