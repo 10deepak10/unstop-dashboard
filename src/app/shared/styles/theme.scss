@@ -11,15 +11,17 @@ $theme-blue: #3079e1;
 $theme-pink: #e9407a;
 $theme-background: #f6f8fa;
 $theme-border: #dadce0;
-$theme-accent: #ddedff;
 
 $text-50-percent: #8da4bf;
 $system-divider: #dde5ea;
 
+$theme-accent: #ddedff;
 $accent-red: #fbebea;
 $accent-purple: #ebe8fd;
+$accent-pink: #fce8ef;
+$accent-secondary: #e5f1fc;
 
 //device breakpoints for responsive design
 $mobile-width: 600px;
-$tablet-width: 768px;
-$desktop-width: 1024px;
+$tablet-width: 900px;
+$desktop-width: 1240px;

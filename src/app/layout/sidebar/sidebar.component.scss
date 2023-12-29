@@ -152,7 +152,7 @@
   }
   .fixed-shadow {
     display: block;
-    position: absolute;
+    position: fixed;
     z-index: 98;
     width: 100vw;
     height: 100vh;

@@ -1,14 +1,52 @@
 @import "../../shared/styles/theme.scss";
-.btn {
-  all: unset;
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+  padding: 16px;
+}
+.dashboard-container {
   width: 100%;
-  height: 40px;
-  background-color: $theme-secondary;
-  text-align: center;
-  color: $theme-white;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 17px;
-  letter-spacing: 0em;
-  border-radius: 8px;
+  height: 100%;
+  border-radius: 12px;
+  background-color: $theme-white;
+  overflow: hidden;
+  .page-tabs {
+    height: 100%;
+    overflow: hidden;
+    .tabs-before {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 20px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+      letter-spacing: 0px;
+      color: $theme-primary;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 46px;
+        background-color: $theme-border;
+        left: 100%;
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  :host {
+    padding: 0px;
+  }
+  .dashboard-container {
+    border-radius: 0px;
+    .page-tabs .tabs-before {
+      display: none;
+    }
+  }
 }

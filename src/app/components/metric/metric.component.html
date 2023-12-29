@@ -1,6 +1,12 @@
 <span class="metric-title">{{ title }}</span>
 <div class="main-container">
-  <div class="metric-container" *ngFor="let data of metric">
+  <div
+    class="metric-container"
+    [ngStyle]="{
+    'column-gap': data.information && '20px',
+  }"
+    *ngFor="let data of metric"
+  >
     <app-icon
       (click)="data.action?.()"
       *ngIf="data.icon"
@@ -11,7 +17,7 @@
       size="20px"
       rounded="sm"
       [ngStyle]="{
-        'margin-right': data.information ? '10px' : '0px',
+        'column-gap': data.information ? '20px' : '0px',
         cursor: data.action ? 'pointer' : 'default'
       }"
     ></app-icon>

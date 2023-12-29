@@ -3,7 +3,6 @@ export enum theme {
   'theme-primary' = '#1C4980',
   'theme-secondary' = '#0073E6',
   'theme-secondary-5' = '#F2F8FE',
-  'theme-accent' = '#DDEDFF',
   'theme-border' = '#DADCE0',
   'theme-success' = '#05C165',
   'text-50-percent' = '#8DA4BF',
@@ -15,8 +14,13 @@ export enum theme {
   'theme-purple' = '#6548EE',
   'theme-blue' = '#3079E1',
   'theme-pink' = '#E9407A',
+
+  'theme-accent' = '#DDEDFF',
   'accent-red' = '#FBEBEA',
   'accent-purple' = '#EBE8FD',
+  'accent-pink' = '#FCE8EF',
+  'accent-secondary' = '#E5F1FC',
+
   //device breakpoints for responsive design
   'mobile-width' = '600px',
   'tablet-width' = '768px',

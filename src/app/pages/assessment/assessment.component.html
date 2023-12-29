@@ -1,12 +1,11 @@
-<button (click)="openModal()">Open Modal</button>
-<app-modal
-  [title]="modalTitle"
-  [showModal]="showModal"
-  (closeModalEvent)="closeModal()"
->
-  <div>m0dal</div>
-  <button modal-footer class="btn">Save</button>
-</app-modal>
-
-
-<app-pill name="deepak"></app-pill>
+<main class="dashboard-container">
+  <app-tabs class="page-tabs">
+    <span tabs-before class="tabs-before">Assessment</span>
+    <app-tab tabTitle="My Assessments" [active]="true">
+      <my-assessments-tab></my-assessments-tab>
+    </app-tab>
+    <app-tab tabTitle="Unstop Assessments">
+      <p>This is the content of Unstop Assessments.</p>
+    </app-tab>
+  </app-tabs>
+</main>

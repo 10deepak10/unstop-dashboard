@@ -3,7 +3,7 @@
   display: inline-flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px 20px 16px 20px;
+  padding: 16px 20px;
 }
 .metric-title {
   font-size: 14px;
@@ -22,9 +22,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    column-gap: 10px;
+    padding: 0px 20px;
     &:not(:first-of-type) {
       border-left: 1px solid $theme-border;
     }
@@ -68,6 +67,41 @@
         letter-spacing: 0px;
         color: $theme-primary;
         text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  :host {
+    gap: 10px;
+    padding: 10px 14px;
+  }
+  .metric-title {
+    font-weight: 500;
+  }
+
+  .main-container .metric-container {
+    gap: 10px !important;
+    padding: 0px 15px;
+    .metrics {
+      .information {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14px;
+      }
+      .numeric {
+        .count-support {
+          font-size: 10px;
+          font-weight: 500;
+          line-height: 14px;
+          letter-spacing: 0px;
+        }
+        .count {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 19px;
+        }
       }
     }
   }

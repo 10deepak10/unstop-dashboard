@@ -159,6 +159,7 @@
     height: 128px;
     padding: 14px;
     gap: 10px;
+    width: 100%;
     .card-top {
       padding-bottom: 10px;
       .card-data {
@@ -179,6 +180,9 @@
             }
           }
         }
+      }
+      app-icon {
+        transform: scale(80%);
       }
     }
     .card-bottom .card-meta-data .meta-data {

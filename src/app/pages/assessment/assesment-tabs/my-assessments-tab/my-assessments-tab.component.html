@@ -1,0 +1,44 @@
+<div class="tab-container">
+  <section class="section-container">
+    <span class="content-header">Assessments Overview</span>
+    <div class="metric-container">
+      @for(metric of metrics; track metric.id){
+      <app-metric [title]="metric.title" [metric]="metric.data"></app-metric>
+      }
+    </div>
+  </section>
+  <section class="section-container">
+    <span class="content-header">My Assessment</span>
+    <div class="cards-container">
+      <div class="new-assessment" (click)="openFormsModal()">
+        <app-icon
+          icon="/assets/icons/plus.svg"
+          size="40px"
+          bgSize="70px"
+          [color]="newIconColor"
+          [bg]="newIconBg"
+          rounded="full"
+        ></app-icon>
+        <span class="title">New Assessment</span>
+        <span class="text"
+          >From here you can add questions of multiple types like MCQs,
+          subjective (text or paragraph)!</span
+        >
+      </div>
+      @for( card of cards ; track card.id){
+      <app-card
+        [title]="card.title"
+        [type]="card.type"
+        [date]="card.date"
+        [duration]="card.duration"
+        [totalQuestion]="card.totalQuestion"
+        [userShared]="card.userShared"
+      ></app-card>
+      }
+    </div>
+  </section>
+</div>
+<form-modal
+  [showModal]="formsModal"
+  (closeModalEvent)="closeFormModal()"
+></form-modal>

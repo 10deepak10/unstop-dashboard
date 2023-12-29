@@ -1,13 +1,22 @@
 @import "../../shared/styles/theme.scss";
-
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 .tabs {
   display: flex;
   cursor: pointer;
+  flex-grow: 0;
   height: 70px;
-
+  border-bottom: 1px solid $system-divider;
   div {
     padding: 20px 0;
     margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: 3px solid transparent;
 
     .title {
@@ -26,17 +35,24 @@
       }
     }
   }
-
-  @media (max-width: $mobile-width) {
+}
+.tab-content {
+  padding: 20px;
+  flex-grow: 1;
+  height: 100%;
+  overflow: auto;
+}
+@media (max-width: $mobile-width) {
+  .tabs {
     width: 100%;
     height: 50px;
-
+    border-bottom: none;
     div {
       padding: 0;
       width: 100%;
       margin-left: 0;
       text-align: center;
-      border-bottom: 2px solid transparent;
+      border-bottom: 2px solid $theme-background;
 
       .title {
         display: inline-block;
@@ -46,5 +62,8 @@
         font-weight: 500;
       }
     }
+  }
+  .tab-content {
+    padding: 20px 15px;
   }
 }
