@@ -5,11 +5,13 @@ import { ModalComponent } from '../../../../components/modal/modal.component';
 import { FormModalComponent } from '../../../../layout/form-modal/form-modal.component';
 import { IconComponent } from '../../../../utilities/icon/icon.component';
 import { theme } from '../../../../shared/styles/theme';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'my-assessments-tab',
   standalone: true,
   imports: [
+    NgClass,
     IconComponent,
     MetricComponent,
     CardComponent,
@@ -21,11 +23,14 @@ import { theme } from '../../../../shared/styles/theme';
   styleUrl: './my-assessments-tab.component.scss',
 })
 export class MyAssessmentsTabComponent {
-  formsModal: boolean = false;
+  public formsModal: boolean = false;
+  public showOverview: boolean = false;
+  public actionIconColor: string = theme['theme-primary'];
+  public activeActionIconBg: string = theme['theme-secondary-5'];
   public newIconColor: string = theme['theme-secondary'];
   public newIconBg: string = theme['theme-white'];
 
-  metrics = [
+  public metrics = [
     {
       id: 1,
       title: 'Total Assessment',
@@ -115,7 +120,7 @@ export class MyAssessmentsTabComponent {
     },
   ];
 
-  cards = [
+  public cards = [
     {
       id: 1,
       title: 'math assignment',
@@ -159,10 +164,19 @@ export class MyAssessmentsTabComponent {
       ],
     },
   ];
-  openFormsModal() {
+
+  public openFormsModal(): void {
     this.formsModal = true;
   }
-  closeFormModal() {
+
+  public closeFormModal(): void {
     this.formsModal = false;
+  }
+
+  public horizontalScrollOnWheel(event: WheelEvent): void {
+    const container = document.querySelector('.cards-container') as HTMLElement;
+    if (container) {
+      container.scrollLeft += event.deltaY;
+    }
   }
 }

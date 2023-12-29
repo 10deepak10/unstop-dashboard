@@ -13,6 +13,7 @@ export class IconComponent {
   @Input() bgSize: string = this.setBgSize;
   @Input() color: string = 'black';
   @Input() bg: string = 'transparent';
+  @Input() borderColor: string = 'transparent';
   @Input() rounded: 'none' | 'full' | 'sm'| 'md' = 'none';
 
   private get setBgSize(): string {

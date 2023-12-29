@@ -4,7 +4,9 @@
       '--bgSize': bgSize,
       '--bg': bg,
       '--rounded': rounded=='sm'?'8px':rounded=='full'?'100px':rounded=='md'?'12px':'0px',
+      '--borderColor': borderColor
     }"
+    [style.border]="borderColor !=='transparent'"
 >
   <span
     class="icon"

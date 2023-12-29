@@ -5,8 +5,14 @@
   row-gap: 40px;
   .section-container {
     display: grid;
-    row-gap: 16px;
-    .content-header {
+    .content {
+      display: grid;
+      row-gap: 16px;
+      .action-icon-group {
+        display: none;
+      }
+    }
+    .header {
       font-size: 18px;
       font-weight: 500;
       line-height: 25px;
@@ -33,7 +39,15 @@
   align-items: center;
   gap: 30px;
   width: 100%;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
   overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .new-assessment {
     display: inline-flex;
@@ -69,26 +83,59 @@
   }
 }
 @media (max-width: $tablet-width) {
-  .tab-container .section-container .metric-container {
-    app-metric:not(:first-of-type) {
-      border-left: none;
-    }
-    app-metric {
-      flex-grow: 1;
-    }
-    app-metric:first-of-type {
-      order: -1;
-      flex-grow: 1;
-      border-bottom: none;
-    }
-    app-metric:nth-of-type(2) {
-      border-top: 1px solid $theme-border;
-      border-bottom: 1px solid $theme-border;
-    }
-    app-metric:last-of-type {
-      order: -1;
-      flex-grow: 1;
-      border-left: 1px solid $theme-border;
+  .tab-container {
+    row-gap: 0px;
+    .section-container {
+      grid-template-rows: 1fr;
+      transition: grid-template-rows 500ms;
+      padding-bottom: 20px;
+      &.hide-overview {
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 500ms;
+        padding-bottom: 0px;
+      }
+      .content {
+        overflow: hidden;
+        .sm-hide{
+          display: none;
+        }
+      }
+      .content-header {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        .action-icon-group {
+          display: inline-flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 0px;
+          app-icon {
+            cursor: pointer;
+          }
+        }
+      }
+      .metric-container {
+        app-metric:not(:first-of-type) {
+          border-left: none;
+        }
+        app-metric {
+          flex-grow: 1;
+        }
+        app-metric:first-of-type {
+          order: -1;
+          flex-grow: 1;
+          border-bottom: none;
+        }
+        app-metric:nth-of-type(2) {
+          border-top: 1px solid $theme-border;
+          border-bottom: 1px solid $theme-border;
+        }
+        app-metric:last-of-type {
+          order: -1;
+          flex-grow: 1;
+          border-left: 1px solid $theme-border;
+        }
+      }
     }
   }
   .cards-container {

@@ -1,40 +1,75 @@
 <div class="tab-container">
-  <section class="section-container">
-    <span class="content-header">Assessments Overview</span>
-    <div class="metric-container">
-      @for(metric of metrics; track metric.id){
-      <app-metric [title]="metric.title" [metric]="metric.data"></app-metric>
-      }
+  <section
+    class="section-container"
+    [ngClass]="showOverview ? 'show-overview' : 'hide-overview'"
+  >
+    <div class="content">
+      <span class="header sm-hide">Assessments Overview</span>
+      <div class="metric-container">
+        @for(metric of metrics; track metric.id){
+        <app-metric [title]="metric.title" [metric]="metric.data"></app-metric>
+        }
+      </div>
     </div>
   </section>
   <section class="section-container">
-    <span class="content-header">My Assessment</span>
-    <div class="cards-container">
-      <div class="new-assessment" (click)="openFormsModal()">
-        <app-icon
-          icon="/assets/icons/plus.svg"
-          size="40px"
-          bgSize="70px"
-          [color]="newIconColor"
-          [bg]="newIconBg"
-          rounded="full"
-        ></app-icon>
-        <span class="title">New Assessment</span>
-        <span class="text"
-          >From here you can add questions of multiple types like MCQs,
-          subjective (text or paragraph)!</span
-        >
+    <div class="content">
+      <div class="content-header">
+        <span class="header">My Assessment</span>
+        <span class="action-icon-group">
+          <app-icon
+            icon="/assets/icons/search.svg"
+            size="20px"
+            bgSize="40px"
+            rounded="full"
+            [color]="actionIconColor"
+          ></app-icon>
+          <app-icon
+            icon="/assets/icons/filter.svg"
+            size="20px"
+            bgSize="40px"
+            rounded="full"
+            [color]="actionIconColor"
+          ></app-icon>
+          <app-icon
+            icon="/assets/icons/metric.svg"
+            size="20px"
+            bgSize="40px"
+            rounded="full"
+            [color]="showOverview ? newIconColor : actionIconColor"
+            [bg]="showOverview ? activeActionIconBg : 'transparent'"
+            [borderColor]="showOverview ? newIconColor : 'transparent'"
+            (click)="showOverview = !showOverview"
+          ></app-icon>
+        </span>
       </div>
-      @for( card of cards ; track card.id){
-      <app-card
-        [title]="card.title"
-        [type]="card.type"
-        [date]="card.date"
-        [duration]="card.duration"
-        [totalQuestion]="card.totalQuestion"
-        [userShared]="card.userShared"
-      ></app-card>
-      }
+      <div class="cards-container" (wheel)="horizontalScrollOnWheel($event)">
+        <div class="new-assessment" (click)="openFormsModal()">
+          <app-icon
+            icon="/assets/icons/plus.svg"
+            size="40px"
+            bgSize="70px"
+            [color]="newIconColor"
+            [bg]="newIconBg"
+            rounded="full"
+          ></app-icon>
+          <span class="title">New Assessment</span>
+          <span class="text"
+            >From here you can add questions of multiple types like MCQs,
+            subjective (text or paragraph)!</span
+          >
+        </div>
+        @for( card of cards ; track card.id){
+        <app-card
+          [title]="card.title"
+          [type]="card.type"
+          [date]="card.date"
+          [duration]="card.duration"
+          [totalQuestion]="card.totalQuestion"
+          [userShared]="card.userShared"
+        ></app-card>
+        }
+      </div>
     </div>
   </section>
 </div>
