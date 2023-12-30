@@ -5,8 +5,6 @@ export enum theme {
   'theme-secondary-5' = '#F2F8FE',
   'theme-border' = '#DADCE0',
   'theme-success' = '#05C165',
-  'text-50-percent' = '#8DA4BF',
-  'system-divider' = '#DDE5EA',
   'theme-white' = '#FFFFFF',
   'theme-black' = '#000000',
   'theme-background' = '#f6f8fa',
@@ -14,6 +12,10 @@ export enum theme {
   'theme-purple' = '#6548EE',
   'theme-blue' = '#3079E1',
   'theme-pink' = '#E9407A',
+  
+  'text-50-percent' = '#8DA4BF',
+  'system-divider' = '#DDE5EA',
+  'system-stroke' = '#BACBD5',
 
   'theme-accent' = '#DDEDFF',
   'accent-red' = '#FBEBEA',

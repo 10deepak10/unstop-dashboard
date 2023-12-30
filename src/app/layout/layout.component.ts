@@ -36,18 +36,20 @@ export class LayoutComponent {
       icon: 'assets/icons/library.svg',
       title: 'My Library',
       link: 'my-library',
+      break:true
     },
     {
       icon: 'assets/icons/round-status.svg',
       title: 'Round status',
       link: 'status',
+      auth: true,
     },
   ];
   constructor(private route: ActivatedRoute, private router: Router) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        this.updateTitle();  // Update the title based on the current route
+        this.updateTitle(); // Update the title based on the current route
       });
   }
   private updateTitle() {

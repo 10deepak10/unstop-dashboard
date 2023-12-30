@@ -1,6 +1,8 @@
 export interface NavGroup {
-    icon?:string;
-    title: string;
-    link?: string;
-    notification?:boolean;
-  }
+  icon?: string;
+  title: string;
+  link?: string;
+  notification?: boolean;
+  auth?: boolean;
+  break?: boolean;
+}
