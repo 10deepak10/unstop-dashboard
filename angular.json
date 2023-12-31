@@ -27,8 +27,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-            ],
+              "src/assets",
+              "src/_redirects",
+              {
+                 "glob": "**/*",
+                 "input": "./node_modules/@fontsource-variable/inter/",
+                 "output": "/assets/fonts/"
+              }
+           ]
+           ,
             "styles": [
               "src/styles.scss"
             ],
@@ -44,8 +51,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "8kb"
                 }
               ],
               "outputHashing": "all"
@@ -87,8 +94,14 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-            ],
+              "src/assets",
+              {
+                 "glob": "**/*",
+                 "input": "./node_modules/@fontsource-variable/inter/",
+                 "output": "/assets/fonts/"
+              }
+           ]
+           ,
             "styles": [
               "src/styles.scss"
             ],
