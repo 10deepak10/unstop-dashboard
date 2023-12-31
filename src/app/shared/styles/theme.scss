@@ -14,7 +14,7 @@ $theme-border: #dadce0;
 
 $text-50-percent: #8da4bf;
 $system-divider: #dde5ea;
-$system-stroke: #BACBD5;
+$system-stroke: #bacbd5;
 
 $theme-accent: #ddedff;
 $accent-red: #fbebea;
@@ -23,6 +23,6 @@ $accent-pink: #fce8ef;
 $accent-secondary: #e5f1fc;
 
 //device breakpoints for responsive design
-$mobile-width: 600px;
-$tablet-width: 900px;
-$desktop-width: 1240px;
+$mobile-width: 767px;
+$tablet-width: 1023px;
+$laptop-width: 1279px;

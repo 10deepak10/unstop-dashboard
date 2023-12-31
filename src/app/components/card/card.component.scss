@@ -80,10 +80,10 @@
               letter-spacing: 0em;
               color: $text-50-percent;
             }
-            .lg-hidden{
+            .lg-hidden {
               display: none;
             }
-            .sm-hidden{
+            .sm-hidden {
               display: inline-flex;
             }
           }
@@ -159,8 +159,34 @@
     }
   }
 }
+@media only screen and (max-width: $tablet-width) {
+  .card-container {
+    width: 100%;
+    .card-bottom {
+      .card-meta-data {
+        gap: 5px;
+        .meta-data {
+          .count {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 15px;
+          }
+          .info-name {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 14px;
+            letter-spacing: 0px;
+          }
+        }
+      }
+      .card-action {
+        gap: 5px;
+      }
+    }
+  }
+}
 
-@media (max-width: $mobile-width) {
+@media only screen and (max-width: $mobile-width) {
   .card-container {
     height: 128px;
     padding: 14px;
@@ -184,10 +210,10 @@
               font-size: 12px;
               font-weight: 500;
             }
-            .sm-hidden{
+            .sm-hidden {
               display: none !important;
             }
-            .lg-hidden{
+            .lg-hidden {
               display: inline-flex !important;
             }
           }
@@ -197,18 +223,8 @@
         transform: scale(80%);
       }
     }
-    .card-bottom .card-meta-data .meta-data {
-      .count {
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 15px;
-      }
-      .info-name {
-        font-size: 10px;
-        font-weight: 500;
-        line-height: 14px;
-        letter-spacing: 0px;
-      }
+    .card-bottom .card-meta-data {
+      gap: 10px;
     }
   }
 }

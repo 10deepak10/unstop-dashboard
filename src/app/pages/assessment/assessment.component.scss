@@ -39,7 +39,7 @@
   }
 }
 
-@media (max-width: $tablet-width) {
+@media only screen and (max-width: $mobile-width) {
   :host {
     padding: 0px;
   }

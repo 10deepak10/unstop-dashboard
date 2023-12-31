@@ -82,7 +82,54 @@
     }
   }
 }
-@media (max-width: $tablet-width) {
+@media (min-width: $laptop-width) {
+  .tab-container .section-container .metric-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media only screen and (max-width: $tablet-width) {
+  .tab-container .section-container .metric-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 3fr;
+    app-metric:nth-of-type(3) {
+      border-top: 1px solid $theme-border;
+      order: 1;
+    }
+    app-metric:last-of-type {
+      border-left: none;
+      border-top: 1px solid $theme-border;
+    }
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    .new-assessment {
+      display: inline-flex;
+      padding: 20px 30px;
+      width: 100%;
+      height: 100%;
+      max-width: unset;
+      app-icon {
+        transform-origin: top;
+        transform: scale(71.4286%);
+        margin-bottom: -20px;
+      }
+      .title {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0em;
+      }
+    }
+    app-card {
+      width: 100%;
+    }
+  }
+}
+@media only screen and (max-width: $mobile-width) {
   .tab-container {
     row-gap: 0px;
     .section-container {
@@ -96,7 +143,7 @@
       }
       .content {
         overflow: hidden;
-        .sm-hide{
+        .sm-hide {
           display: none;
         }
       }
@@ -115,6 +162,7 @@
         }
       }
       .metric-container {
+        display: flex;
         app-metric:not(:first-of-type) {
           border-left: none;
         }
@@ -133,12 +181,17 @@
         app-metric:last-of-type {
           order: -1;
           flex-grow: 1;
+          border-top: none;
           border-left: 1px solid $theme-border;
+        }
+        app-metric:nth-of-type(3) {
+          border-top: none;
         }
       }
     }
   }
   .cards-container {
+    display: flex;
     flex-direction: column;
     row-gap: 15px;
     .new-assessment {
@@ -162,9 +215,24 @@
     }
   }
 }
-@media (min-width: $desktop-width) {
-  .tab-container .section-container .metric-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+@media only screen and (max-width: $mobile-width) and (orientation: landscape) {
+  .tab-container {
+    .section-container {
+      .metric-container {
+        display: grid;
+        app-metric:last-of-type {
+          order: 1;
+          border-top: none;
+          border-left: 1px solid $theme-border;
+        }
+        app-metric:nth-of-type(2) {
+          border-top: none;
+        }
+        app-metric:first-of-type {
+          border-right: 1px solid $theme-border;
+          border-bottom: 1px solid $theme-border;
+        }
+      }
+    }
   }
 }

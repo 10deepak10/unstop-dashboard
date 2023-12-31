@@ -12,7 +12,7 @@ export enum theme {
   'theme-purple' = '#6548EE',
   'theme-blue' = '#3079E1',
   'theme-pink' = '#E9407A',
-  
+
   'text-50-percent' = '#8DA4BF',
   'system-divider' = '#DDE5EA',
   'system-stroke' = '#BACBD5',
@@ -24,7 +24,7 @@ export enum theme {
   'accent-secondary' = '#E5F1FC',
 
   //device breakpoints for responsive design
-  'mobile-width' = '600px',
-  'tablet-width' = '768px',
-  'desktop-width' = '1024px',
+  'mobile-width' = '767px',
+  'tablet-width' = '1023px',
+  'laptop-width' = '1024px',
 }
