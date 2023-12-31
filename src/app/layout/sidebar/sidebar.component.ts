@@ -23,7 +23,7 @@ export class SidebarComponent {
   public iconColorActive = theme['theme-secondary'];
   @Input() navGroups: NavGroup[] = [];
   @Input() showSidebar = signal(false);
-  isactive: WritableSignal<string> = signal('/');
+  public isactive: WritableSignal<string> = signal('/');
   public toggleSidebar(): void {
     this.showSidebar.set(false);
   }

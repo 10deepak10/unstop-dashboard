@@ -18,8 +18,8 @@
         class="nav"
         [ngClass]="[
           navGroup.notification ? 'notify' : '',
-          navGroup.break ? 'breaker': '',
-      ]"
+          navGroup.break ? 'breaker' : ''
+        ]"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         [routerLink]="navGroup.link"

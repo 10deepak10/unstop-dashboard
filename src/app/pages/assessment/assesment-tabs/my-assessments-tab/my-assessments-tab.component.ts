@@ -145,6 +145,7 @@ export class MyAssessmentsTabComponent {
       userShared: [
         { initial: 'dm' },
         { initial: 'kg' },
+        { initial: 'tn' },
         { initial: 'sm' },
         { initial: 'mk' },
       ],
@@ -161,6 +162,8 @@ export class MyAssessmentsTabComponent {
         { initial: 'dm' },
         { initial: 'sm' },
         { initial: 'mk' },
+        { initial: 'jd' },
+        { initial: 'as' },
       ],
     },
   ];

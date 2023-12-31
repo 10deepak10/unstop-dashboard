@@ -1,0 +1,201 @@
+<main class="page-container">
+  <main class="page-container">
+    <app-tabs class="page-tabs">
+      <!-- card  -->
+      <app-tab tabTitle="Card" [active]="true">
+        <section class="section-container">
+          <div class="content">
+            <span class="header">Overview</span>
+            <p>
+              The CardComponent is a reusable Angular component that represents
+              a card with various properties for customization. It can be used
+              to display information such as a title, type, date, duration,
+              total questions, user avatars, and an associated link. The
+              component also allows customization of the icon, icon color, and
+              icon background color.
+            </p>
+          </div>
+        </section>
+        <app-tabs class="page-tabs">
+          <app-tab tabTitle="Basic Card Demo" [active]="true">
+            <app-card
+              [title]="'Assessment'"
+              [type]="'job'"
+              date="2023-12-08 11:07:35.435572+00"
+              [duration]="'1 hr'"
+              [totalQuestion]="'30'"
+              [userShared]="cardUser"
+            ></app-card>
+          </app-tab>
+          <app-tab tabTitle="Code Snippet">
+            <pre [innerText]="cardHtml"></pre>
+          </app-tab>
+        </app-tabs>
+        <section class="section-container">
+          <div class="content">
+            <div class="table-container">
+              <table>
+                <tr>
+                  <th>Property</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                  <th>Default Value</th>
+                </tr>
+                <tr *ngFor="let properties of cardInputProperties">
+                  <td>{{ properties.name }}</td>
+                  <td>{{ properties.description }}</td>
+                  <td>{{ properties.type }}</td>
+                  <td>{{ properties.defaultValue }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </app-tab>
+      <!-- metric  -->
+      <app-tab tabTitle="Metric">
+        <section class="section-container">
+          <div class="content">
+            <span class="header">Overview</span>
+            <p>
+              The MetricComponent is designed to display a set of metrics, each
+              represented by an object conforming to the MetricI interface. Each
+              metric object contains information such as an optional icon,
+              additional information, count, extra value, and an optional
+              action.
+            </p>
+          </div>
+        </section>
+        <app-tabs class="page-tabs">
+          <app-tab tabTitle="Basic Metric Demo" [active]="true">
+            <app-metric
+              [title]="metric.title"
+              [metric]="metric.data"
+            ></app-metric>
+          </app-tab>
+          <app-tab tabTitle="Html Code Snippet">
+            <pre [innerText]="metricHtml"></pre>
+          </app-tab>
+          <app-tab tabTitle="Ts Code Snippet">
+            <pre [innerText]="metricTs"></pre>
+          </app-tab>
+        </app-tabs>
+        <section class="section-container">
+          <div class="content">
+            <div class="table-container">
+              <table>
+                <tr>
+                  <th>Property</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                  <th>Default Value</th>
+                </tr>
+                <tr *ngFor="let properties of metricInputProperties">
+                  <td>{{ properties.name }}</td>
+                  <td>{{ properties.description }}</td>
+                  <td>{{ properties.type }}</td>
+                  <td>{{ properties.defaultValue }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </app-tab>
+      <!-- modal  -->
+      <app-tab tabTitle="Modal">
+        <section class="section-container">
+          <div class="content">
+            <span class="header">Overview</span>
+            <p>
+              The ModalComponent is designed as a modal for displaying content.
+              It has a title, a flag to control whether the modal is visible
+              (showModal), and emits an event when the modal is closed.
+            </p>
+          </div>
+        </section>
+        <app-tabs class="page-tabs">
+          <app-tab tabTitle="Basic modal Demo" [active]="true">
+            <button class="btn" (click)="showModal = true">show modal</button>
+            <app-modal
+              title="Custom Modal"
+              [showModal]="showModal"
+              (closeModalEvent)="closeModal()"
+            >
+              <div>any desired form or content</div>
+              <button modal-footer class="btn">Save</button>
+            </app-modal>
+          </app-tab>
+          <app-tab tabTitle="Code Snippet">
+            <pre [innerText]="modalHtml"></pre>
+          </app-tab>
+        </app-tabs>
+        <section class="section-container">
+          <div class="content">
+            <div class="table-container">
+              <table>
+                <tr>
+                  <th>Property</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                  <th>Default Value</th>
+                </tr>
+                <tr *ngFor="let properties of ModalInputProperties">
+                  <td>{{ properties.name }}</td>
+                  <td>{{ properties.description }}</td>
+                  <td>{{ properties.type }}</td>
+                  <td>{{ properties.defaultValue }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </app-tab>
+      <!-- tab -->
+      <app-tab tabTitle="Tabs ">
+        <section class="section-container">
+          <div class="content">
+            <span class="header">Overview</span>
+            <p>
+              The TabsComponent is a container for managing multiple
+              TabComponent instances. It provides a method to select a specific
+              tab, and it uses ContentChildren to query for all TabComponent
+              instances.
+            </p>
+            <p class="note">
+              "These are basic tabs. I haven't included routing for them as,
+              according to the current project requirements, we don't need it
+              for now. However, this can be modified."
+            </p>
+          </div>
+        </section>
+
+        <app-tabs class="page-tabs">
+          <app-tab tabTitle="code Snippet" [active]="true">
+            <pre [innerText]="tabHtml"></pre>
+          </app-tab>
+        </app-tabs>
+        <section class="section-container">
+          <div class="content">
+            <span class="header">properties for app-tab</span>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <th>Property</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                  <th>Default Value</th>
+                </tr>
+                <tr *ngFor="let properties of TabnputProperties">
+                  <td>{{ properties.name }}</td>
+                  <td>{{ properties.description }}</td>
+                  <td>{{ properties.type }}</td>
+                  <td>{{ properties.defaultValue }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </app-tab>
+    </app-tabs>
+  </main>
+</main>

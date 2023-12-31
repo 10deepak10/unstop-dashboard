@@ -36,12 +36,11 @@ export class LayoutComponent {
       icon: 'assets/icons/library.svg',
       title: 'My Library',
       link: 'my-library',
-      break:true
+      break: true,
     },
     {
       icon: 'assets/icons/round-status.svg',
       title: 'Round status',
-      link: 'status',
       auth: true,
     },
   ];

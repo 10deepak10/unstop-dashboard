@@ -80,6 +80,12 @@
               letter-spacing: 0em;
               color: $text-50-percent;
             }
+            .lg-hidden{
+              display: none;
+            }
+            .sm-hidden{
+              display: inline-flex;
+            }
           }
         }
       }
@@ -177,6 +183,12 @@
             .date {
               font-size: 12px;
               font-weight: 500;
+            }
+            .sm-hidden{
+              display: none !important;
+            }
+            .lg-hidden{
+              display: inline-flex !important;
             }
           }
         }

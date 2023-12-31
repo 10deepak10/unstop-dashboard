@@ -22,6 +22,7 @@ export class AvatarComponent {
     theme['theme-purple'],
     theme['theme-pink'],
     theme['theme-blue'],
+    theme['theme-success'],
   ];
   ngOnInit() {
     // Check if bg is not provided, then assign a random color

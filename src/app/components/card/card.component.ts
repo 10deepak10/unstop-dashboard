@@ -19,7 +19,7 @@ export class CardComponent {
   @Input() icon: string = 'assets/icons/case.svg';
   @Input() title: string = 'title';
   @Input() type: string = 'type';
-  @Input() date: string = 'type';
+  @Input() date: string = '';
   @Input() duration: string = '00';
   @Input() totalQuestion: string = '00';
   @Input() userShared: AvatarI[] = [];
@@ -27,4 +27,5 @@ export class CardComponent {
   @Input() iconColor: string = theme['theme-purple'];
   @Input() iconBg: string = theme['accent-purple'];
   Iconcolor = theme['theme-primary'];
+  Iconmobcolor = theme['text-50-percent'];
 }

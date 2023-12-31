@@ -1,0 +1,39 @@
+@import "../assessment/assessment.component.scss";
+.section-container {
+  padding: 16px;
+  display: grid;
+  .content {
+    display: grid;
+    row-gap: 16px;
+  }
+  .header {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: $theme-primary;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: $theme-black;
+    text-align: justify;
+    a {
+      text-decoration: none;
+      color: $theme-secondary;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px dashed $theme-secondary;
+      }
+      &.angular{
+        color: $theme-red;
+        &:hover{
+          border-bottom: 1px dashed $theme-red;
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
   overflow: hidden;
   padding: 16px;
 }
-.dashboard-container {
+.page-container {
   width: 100%;
   height: 100%;
   border-radius: 12px;
@@ -43,7 +43,7 @@
   :host {
     padding: 0px;
   }
-  .dashboard-container {
+  .page-container {
     border-radius: 0px;
     .page-tabs .tabs-before {
       display: none;
