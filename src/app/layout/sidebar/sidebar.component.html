@@ -13,35 +13,37 @@
           ></app-icon>
         </div>
       </div>
-      <nav
-        *ngFor="let navGroup of navGroups"
-        class="nav"
-        [ngClass]="[
-          navGroup.notification ? 'notify' : '',
-          navGroup.break ? 'breaker' : ''
-        ]"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [routerLink]="navGroup.link"
-        (click)="toggleSidebar()"
-      >
-        <span class="admin-badge" *ngIf="navGroup.auth">admin</span>
-        <app-icon
-          size="15px"
-          bgSize="20px"
-          [icon]="navGroup.icon"
-          [color]="
-            isactive() == '/' + navGroup.link ? iconColorActive : iconColor
-          "
-        ></app-icon>
+      <div class="nav-container">
+        <nav
+          *ngFor="let navGroup of navGroups"
+          class="nav"
+          [ngClass]="[
+            navGroup.notification ? 'notify' : '',
+            navGroup.break ? 'breaker' : ''
+          ]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="navGroup.link"
+          (click)="toggleSidebar()"
+        >
+          <span class="admin-badge" *ngIf="navGroup.auth">admin</span>
+          <app-icon
+            size="15px"
+            bgSize="20px"
+            [icon]="navGroup.icon"
+            [color]="
+              isactive() == '/' + navGroup.link ? iconColorActive : iconColor
+            "
+          ></app-icon>
 
-        <div class="nav-title-box">
-          <div class="nav-title">
-            <span>{{ navGroup.title }}</span>
+          <div class="nav-title-box">
+            <div class="nav-title">
+              <span>{{ navGroup.title }}</span>
+            </div>
           </div>
-        </div>
-        <div class="separator"></div>
-      </nav>
+          <div class="separator"></div>
+        </nav>
+      </div>
     </div>
   </div>
   <div
